@@ -1,7 +1,9 @@
-[gd_scene load_steps=45 format=3 uid="uid://co36ft6f0jr7"]
+[gd_scene load_steps=47 format=3 uid="uid://co36ft6f0jr7"]
 
 [ext_resource type="Texture2D" uid="uid://t0ii08cyegjp" path="res://assets/game/characters/basic_charakter_spritesheet.png" id="1_7uws0"]
 [ext_resource type="Texture2D" uid="uid://b3wvdmq6ilj6m" path="res://assets/game/characters/basic_charakter_actions.png" id="2_t61fv"]
+[ext_resource type="Script" uid="uid://c56ibvofvwt1c" path="res://scripts/state_machine/node_state_machine.gd" id="3_686vu"]
+[ext_resource type="Script" uid="uid://ge3uwo1h1w40" path="res://scenes/characters/player/idle_state.gd" id="4_hss88"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_svuau"]
 atlas = ExtResource("2_t61fv")
@@ -400,3 +402,12 @@ autoplay = "idle_front"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_t61fv")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("3_686vu")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+script = ExtResource("4_hss88")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
