@@ -17,10 +17,10 @@ atlas = ExtResource("1_70ahf")
 region = Rect2(128, 16, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_msy0l"]
-radius = 5.0990195
+radius = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bntui"]
-radius = 7.0
+radius = 6.0
 
 [node name="Rock" type="Sprite2D"]
 material = SubResource("ShaderMaterial_8i8v8")
