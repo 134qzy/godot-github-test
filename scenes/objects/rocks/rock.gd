@@ -14,9 +14,9 @@ func _ready() -> void:
 
 func on_hurt(hit_damage: int) -> void:
 	damage_component.apply_damage(hit_damage)
-	material.set_shader_parameter("shake_intensity",0.3)
+	material.set("shader_parameter/shake_intensity",0.3)
 	await get_tree().create_timer(0.5).timeout
-	material.set_shader_parameter("shake_intensity",0.0)
+	material.set("shader_parameter/shake_intensity",0.0)
 	
 func on_max_damage_reached() -> void:
 	call_deferred("add_stone_scene")
