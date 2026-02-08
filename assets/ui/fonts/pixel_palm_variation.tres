@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://o24ujthq44dn"]
+
+[ext_resource type="FontFile" uid="uid://cdf3yow364006" path="res://assets/ui/fonts/pixel_palm.ttf" id="1_dveal"]
+
+[resource]
+base_font = ExtResource("1_dveal")
