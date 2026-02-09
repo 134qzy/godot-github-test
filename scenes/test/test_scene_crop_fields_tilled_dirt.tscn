@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cw3sgn6dvf575"]
+[gd_scene load_steps=9 format=4 uid="uid://cw3sgn6dvf575"]
 
 [ext_resource type="PackedScene" uid="uid://bpxldj61l1law" path="res://scenes/components/day_night_cycle_component.tscn" id="1_mapoa"]
 [ext_resource type="TileSet" uid="uid://b4i5h86dtttad" path="res://Tilesets/game_tile_set.tres" id="2_ff0kp"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://px6d1nudamel" path="res://scenes/components/field_cursor_component.tscn" id="3_mapoa"]
 [ext_resource type="PackedScene" uid="uid://bvw8yyycrryg1" path="res://scenes/ui/game_screen.tscn" id="4_bb1mf"]
 [ext_resource type="Script" uid="uid://d4igm1nj6ho8w" path="res://scenes/components/field_cursor_component.gd" id="4_ff0kp"]
+[ext_resource type="PackedScene" uid="uid://dkw1ih0dg032d" path="res://scenes/components/crops_corsor_component.tscn" id="7_aolun"]
+[ext_resource type="Script" uid="uid://deul01fdrihbw" path="res://scenes/components/crops_corsor_component.gd" id="8_bb1mf"]
 
 [node name="TestSceneCropFieldsTilledDirt" type="Node2D"]
 y_sort_enabled = true
@@ -27,11 +29,18 @@ tile_map_data = PackedByteArray("AAAMAA0AAQACAAIAAAAMAAwAAQACAAEAAAAMAAsAAQAFAAE
 tile_set = ExtResource("2_ff0kp")
 
 [node name="TilledSoil" type="TileMapLayer" parent="GameTileMap"]
+tile_set = ExtResource("2_ff0kp")
 
 [node name="CropFields" type="Node2D" parent="."]
 
-[node name="FieldCursorComponent" parent="." instance=ExtResource("3_mapoa")]
+[node name="FieldCursorComponent" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("3_mapoa")]
 script = ExtResource("4_ff0kp")
+grass_tilemap_layer = NodePath("../GameTileMap/Grass")
+tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
+
+[node name="CropsCorsorComponent" parent="." node_paths=PackedStringArray("tilled_soil_tilemap_layer") instance=ExtResource("7_aolun")]
+script = ExtResource("8_bb1mf")
+tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 
 [node name="Player" parent="." instance=ExtResource("3_aolun")]
 position = Vector2(123, 127)
