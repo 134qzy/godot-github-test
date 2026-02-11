@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://3s7t2o18cvvb"]
+
+[ext_resource type="Script" uid="uid://cp2ys2nt8l753" path="res://scenes/components/test_scene_sava_data_manager_component.gd" id="1_7ph6d"]
+
+[node name="TestSceneSavaDataManagerComponent" type="Node"]
+script = ExtResource("1_7ph6d")
