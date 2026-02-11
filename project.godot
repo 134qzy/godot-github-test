@@ -20,6 +20,21 @@ ToolManager="*res://scripts/globals/tool_manager.gd"
 InventoryManager="*res://scripts/globals/inventory_manager.gd"
 DayAndNightCycleManager="*res://scripts/globals/day_and_night_cycle_manager.gd"
 SaveGameManager="*res://scripts/globals/save_game_manager.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+editor/new_file_template="~ this_is_a_node_title
+Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+Nathan: Here are some choices.
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+- Start again => this_is_a_node_title
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END"
 
 [display]
 
@@ -30,11 +45,17 @@ window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
 "res://Tilesets/": "yellow",
+"res://addons/": "red",
 "res://assets/": "orange",
+"res://dialogue/": "yellow",
 "res://resources/": "purple",
 "res://scenes/": "teal",
 "res://scripts/": "pink"
