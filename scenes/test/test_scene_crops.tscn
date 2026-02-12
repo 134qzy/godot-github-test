@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://jk3xokra33na"]
+[gd_scene load_steps=8 format=4 uid="uid://jk3xokra33na"]
 
 [ext_resource type="PackedScene" uid="uid://bpxldj61l1law" path="res://scenes/components/day_night_cycle_component.tscn" id="1_av17k"]
+[ext_resource type="PackedScene" uid="uid://c7i0ixbtmwvh1" path="res://scenes/components/test_scene_enable_tool_button_component.tscn" id="1_f40v7"]
 [ext_resource type="TileSet" uid="uid://b4i5h86dtttad" path="res://Tilesets/game_tile_set.tres" id="2_n2ev8"]
 [ext_resource type="PackedScene" uid="uid://co36ft6f0jr7" path="res://scenes/characters/player/player.tscn" id="3_dcj5d"]
 [ext_resource type="PackedScene" uid="uid://bvw8yyycrryg1" path="res://scenes/ui/game_screen.tscn" id="4_ury62"]
@@ -9,6 +10,8 @@
 
 [node name="TestSceneCrops" type="Node2D"]
 y_sort_enabled = true
+
+[node name="TestSceneEnableToolButtonComponent" parent="." instance=ExtResource("1_f40v7")]
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_av17k")]
 visible = false

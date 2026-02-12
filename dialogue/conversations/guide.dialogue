@@ -1,11 +1,15 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+
+Marlow: [[Hi|Hello|Howdy]], nice to meet you
+Marlow: Welcome to your new farm.
+Marlow: 让我们说中文
+Marlow: 你想种地吗？
+- 选择种地
+	Teemo: 来！
+	do GameDialogueManager.action_give_crop_seeds()
+- 选择不种地
+	Teemo: 不干！
+
+
+
 => END
