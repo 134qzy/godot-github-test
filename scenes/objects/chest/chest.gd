@@ -29,5 +29,22 @@ func on_interactable_activated() -> void:
 	in_range = true
 	
 func on_interactable_deactivated() -> void:
+	if is_chest_open:
+		animated_sprite_2d.play("chest_close")
+	
+	is_chest_open = false
 	interactable_label_component.hide()
 	in_range = false
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if in_range:
+		if event.is_action_pressed("show_dialogue"):
+			interactable_label_component.hide()
+			animated_sprite_2d.play("chest_open")
+			is_chest_open = true
+			
+			var balloon: BasicGameDialogueBalloon = balloon_scene.instantiate()
+			get_tree().current_scene.add_child(balloon)
+			balloon.start(load("some dialogue script file here"), dialogue_start_command)
+			
+		
