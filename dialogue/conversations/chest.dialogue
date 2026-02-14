@@ -1,0 +1,25 @@
+~ start_cow_pasture_box
+
+Pasture Box: [[Hi|Hello]], 你的牛饿了
+Pasture Box: 你要不要喂一下牛？
+- Yes
+	Marlow: 喂喂牛
+	do GameDialogueManager.action_feed_the_animals()
+- No
+	Marlow: 不用，牛会自己找吃的
+
+
+=> END
+
+~ start_chicken_pasture_box
+
+Pasture Box: [[Hi|Hello]], 你的鸡饿了
+Pasture Box: 你要不要喂一下鸡 ？
+- Yes
+	Marlow: 鸡你太美
+	do GameDialogueManager.action_feed_the_animals()
+- No
+	Marlow: 不用，鸡会自己找吃的
+
+
+=> END
