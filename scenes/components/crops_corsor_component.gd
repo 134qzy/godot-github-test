@@ -32,7 +32,7 @@ func get_cell_under_mouse() -> void:
 	distance = player.global_position.distance_to(local_cell_position)
 	
 func add_crop() -> void:
-	if distance < 20.0:
+	if distance < 20.0 && cell_source_id != -1:
 		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn:
 			var corn_instance = corn_plant_scene.instantiate() as Node2D
 			corn_instance.global_position = local_cell_position
@@ -44,7 +44,7 @@ func add_crop() -> void:
 			get_parent().find_child("CropFields").add_child(tomato_instance)
 			
 func remove_crop() -> void:
-	if distance < 20.0:
+	if distance < 20.0 && cell_source_id != -1:
 		var crop_nodes = get_parent().find_child("CropFields").get_children()
 		
 		for node: Node2D in crop_nodes:

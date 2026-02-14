@@ -45,11 +45,11 @@ tile_map_data = PackedByteArray("AAACAAIABQABAAAAAAADAAIABQACAAMAAAAEAAIABQACAAM
 tile_set = ExtResource("1_i04cp")
 
 [node name="Player" parent="." instance=ExtResource("2_3aka8")]
-y_sort_enabled = true
 position = Vector2(126, 298)
 current_tool = 1
 
 [node name="Chickens" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens"]
 navigation_polygon = SubResource("NavigationPolygon_jtmit")
@@ -72,10 +72,8 @@ position = Vector2(274, 102)
 [node name="Chicken6" parent="Chickens" instance=ExtResource("3_31arr")]
 position = Vector2(102, 241)
 
-[node name="Chicken7" parent="Chickens" instance=ExtResource("3_31arr")]
-position = Vector2(206, 213)
-
 [node name="Cows" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Cows"]
 navigation_polygon = SubResource("NavigationPolygon_31arr")
@@ -89,3 +87,9 @@ position = Vector2(466, 149)
 
 [node name="Cow3" parent="Cows" instance=ExtResource("4_3aka8")]
 position = Vector2(418, 216)
+
+[node name="Cow4" parent="Cows" instance=ExtResource("4_3aka8")]
+position = Vector2(417, 168)
+
+[node name="Cow5" parent="Cows" instance=ExtResource("4_3aka8")]
+position = Vector2(425, 115)
