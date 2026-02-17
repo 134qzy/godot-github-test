@@ -2,7 +2,7 @@ extends Node
 
 
 var main_scene_path: String = "res://scenes/main_scene.tscn"
-var main_scene_level_root_path: String = "root/MainScene/GameRoot/LevelRoot"
+var main_scene_level_root_path: String = "/root/MainScene/GameRoot/LevelRoot"
 
 var level_scenes: Dictionary = {
 	"Level1" : "res://scenes/levels/level_1.tscn"
@@ -27,7 +27,7 @@ func load_level(level: String) -> void:
 		var nodes = level_root.get_children()
 		
 		if nodes != null:
-			for node in nodes:
+			for node: Node in nodes:
 				node.queue_free()
 				
 		level_root.add_child(level_scene)
