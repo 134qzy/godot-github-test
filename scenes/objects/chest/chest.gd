@@ -47,7 +47,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			is_chest_open = true
 			
 			var balloon: BasicGameDialogueBalloon = balloon_scene.instantiate()
-			get_tree().current_scene.add_child(balloon)
+			get_tree().root.add_child(balloon)
 			balloon.start(load("res://dialogue/conversations/chest.dialogue"), dialogue_start_command)
 			
 func on_feed_the_animals() -> void:
