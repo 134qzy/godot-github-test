@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="github-test"
-run/main_scene="uid://cfsk0af1ul4bq"
+run/main_scene="uid://dsl8cls77viyj"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://cekqsqqmp5c0c"
 
 [autoload]
 
